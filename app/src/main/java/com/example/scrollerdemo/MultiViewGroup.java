@@ -14,17 +14,10 @@ import android.widget.Scroller;
 
 //自定义ViewGroup ，
 public class MultiViewGroup extends ViewGroup {
-
 	private Context mContext;
-
 	private static String TAG = "MultiViewGroup";
 	private int curScreen = 0 ;  //当前屏
-
 	private Scroller mScroller = null ;
-
-
-
-
 	public MultiViewGroup(Context context) {
 		super(context);
 		mContext = context;
@@ -40,7 +33,6 @@ public class MultiViewGroup extends ViewGroup {
 	public void startMove(){
 		curScreen ++ ;
 		Log.i(TAG, "----startMove---- curScreen " + curScreen);
-
 		Log.i(TAG, "----width  " + getWidth());
 		//采用Scroller类控制滑动过程
 		mScroller.startScroll((curScreen-1) *getWidth(), 0,
@@ -58,23 +50,18 @@ public class MultiViewGroup extends ViewGroup {
 		if(mScroller != null){
 			//如果动画还没结束，我们就按下了结束的按钮，那我们就结束该动画，即马上滑动指定位置
 			if(!mScroller.isFinished()){
-
 				int scrollCurX= mScroller.getCurrX() ;
 				//判断是否达到下一屏的中间位置，如果达到就抵达下一屏，否则保持在原屏幕
 				//int moveX = scrollCurX - mScroller.getStartX()   ;
 				// Log.i(TAG, "----mScroller.is not finished ---- shouldNext" + shouldNext);
 				//boolean shouldNext = moveX >= getWidth() / 2 ;
 				int descScreen = ( scrollCurX +  getWidth() / 2) /  getWidth() ;
-
 				Log.i(TAG, "----mScroller.is not finished ---- shouldNext" + descScreen);
-
 				Log.i(TAG, "----mScroller.is not finished ---- scrollCurX " + scrollCurX);
 				mScroller.abortAnimation();
-
 				//停止了动画，我们马上滑倒目标位置
 				scrollTo(descScreen * getWidth() , 0);
 				mScroller.forceFinished(true);
-
 				curScreen = descScreen ;
 			}
 		}
@@ -120,7 +107,6 @@ public class MultiViewGroup extends ViewGroup {
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
 		// TODO Auto-generated method stub
 		Log.e(TAG, "onInterceptTouchEvent-slop:" + mTouchSlop);
-
 		final int action = ev.getAction();
 		//表示已经开始滑动了，不需要走该Action_MOVE方法了(第一次时可能调用)。
 		if ((action == MotionEvent.ACTION_MOVE) && (mTouchState != TOUCH_STATE_REST)) {

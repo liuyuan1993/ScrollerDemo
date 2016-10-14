@@ -9,7 +9,7 @@ import android.widget.Button;
 
 /**
  *
- * @author http://http://blog.csdn.net/qinjuning
+ * @author
  */
 //带有可以切换屏的Activity
 public class MultiScreenActivity extends Activity implements OnClickListener {
