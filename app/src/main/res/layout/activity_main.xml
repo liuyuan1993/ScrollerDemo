@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     tools:context=".MainActivity">
+  <com.example.scrollerdemo.MyViewGroup
+      android:id="@+id/myviewgroup"
+      android:layout_width="300dp"
+      android:background="#000"
+      android:layout_height="100dp">
+       <Button
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+           android:background="#f00"
+    android:text="button1"/>
+
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#0f0"
+          android:text="button2"/>
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#00f"
+          android:text="button2"/>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#00f"
+          android:text="button2"/>
+
+
+  </com.example.scrollerdemo.MyViewGroup>
+    <Button
+        android:id="@+id/btn_move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="移动"
+
+        />
+
+</RelativeLayout>
